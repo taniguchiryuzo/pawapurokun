@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+    font-size: 32px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: yellow;
+    color: red;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    background-image: url(/image/baseball_seat_knock.png);
+    
+}
+
+
+.status{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.life{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.character{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content:right ;
+background-image: url(./image/G’s高校.png);
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+main {
+    border-bottom: 1px solid #ccc;
+}
+
+footer {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+p {
+    font-size: 200%;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+    /* height: 200px; */
+}
+
+ul {
+    padding: 0;
+    border-top: 1px solid #000000;
+    display: table;
+    /* 定義 */
+    table-layout: fixed;
+    width: 100%;
+}
+
+li {
+    text-align: center;
+    list-style-type: none;
+    border: 1px solid #666;
+    background-color: #FFF;
+    display: table-cell;
+    /* 定義 */
+    cursor: pointer;
+}
+
+li:hover {
+    background: #0066CC;
+    color: #fff;
+}
+
+
+.result {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly
+}
