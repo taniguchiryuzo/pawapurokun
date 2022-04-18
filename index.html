@@ -62,6 +62,30 @@
             <div class="black-background" id="js-black-bg"></div>
         </div>
 
+        <div class="popup2" id="js-popup2">
+            <div class="popup-inner2">
+                <div class="close-btn2" id="js-close-btn2"><i class="fas fa-times"></i></div>
+                <a href="#"><img src="./image/itazura_pinpon_dash.png" alt="ポップアップ画像"></a>
+            </div>
+            <div class="black-background2" id="js-black-bg2"></div>
+        </div>
+
+        <div class="popup3" id="js-popup3">
+            <div class="popup-inner3">
+                <div class="close-btn3" id="js-close-btn3"><i class="fas fa-times"></i></div>
+                <a href="#"><img src="./image/baseball_seat_knock.png" alt="ポップアップ画像"></a>
+            </div>
+            <div class="black-background3" id="js-black-bg3"></div>
+        </div>
+
+        <div class="popup4" id="js-popup4">
+            <div class="popup-inner4">
+                <div class="close-btn4" id="js-close-btn4"><i class="fas fa-times"></i></div>
+                <a href="#"><img src="./image/pet_inu_sleep.png" alt="ポップアップ画像"></a>
+            </div>
+            <div class="black-background4" id="js-black-bg4"></div>
+        </div>
+
     </main>
 
     <footer>フッター</footer>
@@ -217,6 +241,7 @@
             pus.value += 50;
             alert('体力が50回復した');
         })
+
     function popupImage() {
             var popup = document.getElementById('js-popup');
             if (!popup) return;
@@ -236,6 +261,66 @@
             }
         }
         popupImage();
+
+    function popupImage2() {
+            var popup2 = document.getElementById('js-popup2');
+            if (!popup2) return;
+
+            var blackBg2 = document.getElementById('js-black-bg2');
+            var closeBtn2 = document.getElementById('js-close-btn2');
+            var showBtn2 = document.getElementById('choki');
+
+            closePopUp(blackBg2);
+            closePopUp(closeBtn2);
+            closePopUp(showBtn2);
+            function closePopUp(elem2) {
+                if (!elem2) return;
+                elem2.addEventListener('click', function () {
+                    popup2.classList.toggle('is-show');
+                });
+            }
+        }
+        popupImage2();
+
+    function popupImage3() {
+            var popup3 = document.getElementById('js-popup3');
+            if (!popup3) return;
+
+            var blackBg3 = document.getElementById('js-black-bg3');
+            var closeBtn3 = document.getElementById('js-close-btn3');
+            var showBtn3 = document.getElementById('paa');
+
+            closePopUp(blackBg3);
+            closePopUp(closeBtn3);
+            closePopUp(showBtn3);
+            function closePopUp(elem3) {
+                if (!elem3) return;
+                elem3.addEventListener('click', function () {
+                    popup3.classList.toggle('is-show');
+                });
+            }
+        }
+        popupImage3();
+
+    function popupImage4() {
+            var popup4 = document.getElementById('js-popup4');
+            if (!popup4) return;
+
+            var blackBg4 = document.getElementById('js-black-bg4');
+            var closeBtn4 = document.getElementById('js-close-btn4');
+            var showBtn4 = document.getElementById('rest');
+
+            closePopUp(blackBg4);
+            closePopUp(closeBtn4);
+            closePopUp(showBtn4);
+            function closePopUp(elem4) {
+                if (!elem4) return;
+                elem4.addEventListener('click', function () {
+                    popup4.classList.toggle('is-show');
+                });
+            }
+        }
+        popupImage4();
         // let count = 0;
         // let win = 0;
         // winrate = 0;
