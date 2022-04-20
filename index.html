@@ -120,10 +120,12 @@
             power += 10;
              $('#meet').text("ミート" + meet);
              $('#power').text("パワー" + power);
-
+             
              let pus = document.getElementById('HP');
             pus.value -= 20;
              alert('体力が20下がった。');
+             value -= 20;
+             console.log(value);
             //  $('#value').text('体力-20'); value -= 20;
         // let value = document.getElementById('test').innerHTML
         //     value = value - 20;
@@ -132,6 +134,8 @@
         // let pus = document.getElementById('value');
             document.getElementById('HP').value -= 20;
             alert('体力が20下がった。');
+            value -= 20;
+            console.log(value);
 
         }else if(value >= 60){
             if (randomnumber >= 80) {
@@ -147,11 +151,15 @@
                 //  $('#value').text('体力-20'); value -= 20;
                 // let value = document.getElementById('test').innerHTML
                 //     value = value - 20;
+                value -= 20;
+                console.log(value);
             } else if (randomnumber <= 80) {
                 alert('怪我をした')
                 let pus = document.getElementById('HP');
                 pus.value -= 20;
                 alert('体力が20下がった。');
+                value -= 20;
+                console.log(value);
 
             } else if (value >= 20) {
                 if (randomnumber > 80) {
@@ -164,6 +172,8 @@
                     let pus = document.getElementById('HP');
                     pus.value -= 20;
                     alert('体力が20下がった。');
+                    value -= 20;
+                    console.log(value);
                     //  $('#value').text('体力-20'); value -= 20;
                     // let value = document.getElementById('test').innerHTML
                     //     value = value - 20;
@@ -172,6 +182,8 @@
                     let pus = document.getElementById('HP');
                     pus.value -= 20;
                     alert('体力が20下がった。');
+                    value -= 20;
+                    console.log(value);
 
                 }
             }
@@ -199,6 +211,8 @@
              let pus = document.getElementById('HP');
             pus.value -= 20;
              alert('体力が20下がった。');
+             value -= 20;
+            console.log(value);
             //  $('#value').text('体力-20'); value -= 20;
         // let value = document.getElementById('test').innerHTML
         //     value = value - 20;
@@ -206,7 +220,11 @@
             let pus = document.getElementById('HP');
             pus.value -= 20;
             alert('体力が20下がった。');
+            value -= 20;
+            console.log(value);
+
         }})
+
         $('#paa').on('click',function(){
 
         const min = 0;
@@ -226,6 +244,8 @@
              let pus = document.getElementById('HP');
             pus.value -= 20;
              alert('体力が20下がった。');
+             value -= 20;
+            console.log(value);
             //  $('#value').text('体力-20'); value -= 20;
         // let value = document.getElementById('test').innerHTML
         //     value = value - 20;
@@ -233,6 +253,8 @@
             let pus = document.getElementById('HP');
             pus.value -= 20;
             alert('体力が20下がった。');
+            value -= 20;
+            console.log(value);
         }})
 
         $('#rest').on('click', function () {
@@ -240,7 +262,12 @@
              let pus = document.getElementById('HP');
             pus.value += 50;
             alert('体力が50回復した');
+            value += 50;
+            console.log(value);
         })
+
+        console.log(value);
+        // クリック後にポップアップの表示
 
     function popupImage() {
             var popup = document.getElementById('js-popup');
