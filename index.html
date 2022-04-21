@@ -14,27 +14,27 @@
         <h1>Gプロ君</h1>
     </header>
 
-    <section >
-      <div class="status">
-          <div id="meet" style="border: 1px solid #666;">ミート</div>
-          <div id="power" style="border: 1px solid #666;">パワー</div>
-          <div id="leg" style="border: 1px solid #666;">走力</div>
-          <div id="kata" style="border: 1px solid #666;">肩力</div>
-          <div id="defense" style="border: 1px solid #666;">守備力</div>
-      </div>
+    <section>
+        <div class="status">
+            <div id="meet" style="border: 1px solid #666;">ミート</div>
+            <div id="power" style="border: 1px solid #666;">パワー</div>
+            <div id="leg" style="border: 1px solid #666;">走力</div>
+            <div id="kata" style="border: 1px solid #666;">肩力</div>
+            <div id="defense" style="border: 1px solid #666;">守備力</div>
+        </div>
 
     </section>
 
-<section>
-<div class="life">
-    <meter id="HP" class="test" max="100" low="20" high="40" value="100"></meter>
-</div>
+    <section>
+        <div class="life">
+            <meter id="HP" class="test" max="100" low="20" high="40" value="100"></meter>
+        </div>
 
-<div class="character">
-    <img src="/image/kid_job_boy_baseballer.png" alt="">
-</div>
+        <div class="character">
+            <img src="/image/kid_job_boy_baseballer.png" alt="">
+        </div>
 
-</section>
+    </section>
 
     <main>
         <ul>
@@ -92,174 +92,526 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         // ここに処理を追加  
-        
+
         let value = 100;
         let meet = 0;
-        let power =0;
+        let power = 0;
         let leg = 0;
         let kata = 0;
         let defense = 0;
         window.onload = function () {
-
-        $('#guu').on('click',function(){
+            
+            $('#guu').on('click', function () {
         
-        if (value >= 80) {
-
-        const min = 0;
-        const max = 100;
-        const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
-        console.log(randomnumber)
-
+                
         
+                    const min = 0;
+                    const max = 100;
+                    const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                    // console.log(randomnumber)
+        
+        
+        
+                    if (randomnumber >= 70 && 40 >= value && value >= 0) {
+        
+                        alert('ミートアップ');
+                        meet += 1;
+                        alert('パワーアップ');
+                        power += 10;
+                        $('#meet').text("ミート" + meet);
+                        $('#power').text("パワー" + power);
+        
+                        let pus = document.getElementById('HP');
+                        pus.value -= 20;
+                        alert('体力が20下がった。');
+                        value -= 20;
+                        console.log(value);
+                        //  $('#value').text('体力-20'); value -= 20;
+                        // let value = document.getElementById('test').innerHTML
+                        //     value = value - 20;
+                    } else if (randomnumber < 70 && 40 >= value && value >= 0) {
+                        alert('怪我をした')
+                        // let pus = document.getElementById('value');
+                        document.getElementById('HP').value -= 20;
+                        alert('体力が20下がった。');
+                        value -= 20;
+                        console.log(value);
+                        
+                    }
+                    
+                    
+                    else{
+                        ;
+                    }
+                })
 
-        if(randomnumber > 50){
-
-            alert('ミートアップ');
-            meet += 1; 
-            alert('パワーアップ');
-            power += 10;
-             $('#meet').text("ミート" + meet);
-             $('#power').text("パワー" + power);
-             
-             let pus = document.getElementById('HP');
-            pus.value -= 20;
-             alert('体力が20下がった。');
-             value -= 20;
-             console.log(value);
-            //  $('#value').text('体力-20'); value -= 20;
-        // let value = document.getElementById('test').innerHTML
-        //     value = value - 20;
-        }else if(randomnumber<50){
-            alert ('怪我をした')
-        // let pus = document.getElementById('value');
-            document.getElementById('HP').value -= 20;
-            alert('体力が20下がった。');
-            value -= 20;
-            console.log(value);
-
-        }else if(value >= 60){
-            if (randomnumber >= 80) {
-
-                alert('ミートアップ'); meet += 1;
-                alert('パワーアップ'); power += 10;
-                $('#meet').text("ミート" + meet);
-                $('#power').text("パワー" + power);
-
-                let pus = document.getElementById('HP');
-                pus.value -= 20;
-                alert('体力が20下がった。');
-                //  $('#value').text('体力-20'); value -= 20;
-                // let value = document.getElementById('test').innerHTML
-                //     value = value - 20;
-                value -= 20;
-                console.log(value);
-            } else if (randomnumber <= 80) {
-                alert('怪我をした')
-                let pus = document.getElementById('HP');
-                pus.value -= 20;
-                alert('体力が20下がった。');
-                value -= 20;
-                console.log(value);
-
-            } else if (value >= 20) {
-                if (randomnumber > 80) {
-
-                    alert('ミートアップ'); meet += 1;
-                    alert('パワーアップ'); power += 10;
-                    $('#meet').text("ミート" + meet);
-                    $('#power').text("パワー" + power);
-
-                    let pus = document.getElementById('HP');
-                    pus.value -= 20;
-                    alert('体力が20下がった。');
-                    value -= 20;
-                    console.log(value);
-                    //  $('#value').text('体力-20'); value -= 20;
-                    // let value = document.getElementById('test').innerHTML
-                    //     value = value - 20;
-                } else if (randomnumber < 80) {
-                    alert('怪我をした')
-                    let pus = document.getElementById('HP');
-                    pus.value -= 20;
-                    alert('体力が20下がった。');
-                    value -= 20;
-                    console.log(value);
-
+                $('#guu').on('click', function () {
+            
+                    
+            
+                        const min = 0;
+                        const max = 100;
+                        const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                        // console.log(randomnumber)
+            
+            
+            
+                        if (randomnumber >= 50 && 60 >= value && value > 40) {
+            
+                            alert('ミートアップ');
+                            meet += 1;
+                            alert('パワーアップ');
+                            power += 10;
+                            $('#meet').text("ミート" + meet);
+                            $('#power').text("パワー" + power);
+            
+                            let pus = document.getElementById('HP');
+                            pus.value -= 20;
+                            alert('体力が20下がった。');
+                            value -= 20;
+                            console.log(value);
+                            //  $('#value').text('体力-20'); value -= 20;
+                            // let value = document.getElementById('test').innerHTML
+                            //     value = value - 20;
+                        } else if (randomnumber < 50 && 60 >= value && value > 40) {
+                            alert('怪我をした')
+                            // let pus = document.getElementById('value');
+                            document.getElementById('HP').value -= 20;
+                            alert('体力が20下がった。');
+                            value -= 20;
+                            console.log(value);
+                            
+                        }
+                        
+                        
+                        else{
+                            ;
+                        }
+                    })
+                    
+                    $('#guu').on('click', function () {
+            
+                            const min = 0;
+                            const max = 100;
+                            const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                            // console.log(randomnumber)
+            
+            
+            
+                            if (randomnumber >= 30 && 80 >= value && value > 60) {
+            
+                                alert('ミートアップ');
+                                meet += 1;
+                                alert('パワーアップ');
+                                power += 10;
+                                $('#meet').text("ミート" + meet);
+                                $('#power').text("パワー" + power);
+            
+                                let pus = document.getElementById('HP');
+                                pus.value -= 20;
+                                alert('体力が20下がった。');
+                                value -= 20;
+                                console.log(value);
+                                //  $('#value').text('体力-20'); value -= 20;
+                                // let value = document.getElementById('test').innerHTML
+                                //     value = value - 20;
+                            } else if (randomnumber < 30 && 80 >= value && value > 60) {
+                                alert('怪我をした')
+                                // let pus = document.getElementById('value');
+                                document.getElementById('HP').value -= 20;
+                                alert('体力が20下がった。');
+                                value -= 20;
+                                console.log(value);
+            
+                            }else{
+                    ;
                 }
-            }
+            })
+            
+        $('#guu').on('click', function () {
+            
+                
+                
+                    const min = 0;
+                    const max = 100;
+                    const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                    // console.log(randomnumber)
+
+                    
+
+                    if (randomnumber >= 10 && 100 >= value && value > 80) {
+
+                        alert('ミートアップ');
+                        meet += 1;
+                        alert('パワーアップ');
+                        power += 10;
+                        $('#meet').text("ミート" + meet);
+                        $('#power').text("パワー" + power);
+
+                        let pus = document.getElementById('HP');
+                        pus.value -= 20;
+                        alert('体力が20下がった。');
+                        value -= 20;
+                        console.log(value);
+                        //  $('#value').text('体力-20'); value -= 20;
+                        // let value = document.getElementById('test').innerHTML
+                        //     value = value - 20;
+                    } else if (randomnumber < 10 && 100 >= value && value >= 80) {
+                        alert('怪我をした')
+                        // let pus = document.getElementById('value');
+                        document.getElementById('HP').value -= 20;
+                        alert('体力が20下がった。');
+                        value -= 20;
+                        console.log(value);
+
+                    }    
+        else{
+            ;
         }
-    
-    }})
-    }
-    
-        $('#choki').on('click',function(){
+    })
+    // チョキの部分
+            $('#choki').on('click', function () {
+        
+                
+        
+                    const min = 0;
+                    const max = 100;
+                    const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                    // console.log(randomnumber)
+        
+        
+        
+                    if (randomnumber >= 70 && 40 >= value && value >= 0) {
+        
+                        alert('走力アップ');
+                        leg += 1;
+                        alert('守備力アップ');
+                        defense += 1;
+                        $('#leg').text("走力" + leg);
+                        $('#defense').text("守備力" + defense);
+        
+                        let pus = document.getElementById('HP');
+                        pus.value -= 20;
+                        alert('体力が20下がった。');
+                        value -= 20;
+                        console.log(value);
+                        //  $('#value').text('体力-20'); value -= 20;
+                        // let value = document.getElementById('test').innerHTML
+                        //     value = value - 20;
+                    } else if (randomnumber < 70 && 40 >= value && value >= 0) {
+                        alert('怪我をした')
+                        // let pus = document.getElementById('value');
+                        document.getElementById('HP').value -= 20;
+                        alert('体力が20下がった。');
+                        value -= 20;
+                        console.log(value);
+                        
+                    }
+                    
+                    
+                    else{
+                        ;
+                    }
+                })
 
-        const min = 0;
-        const max = 100;
-        const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
-        console.log(randomnumber)
+                $('#choki').on('click', function () {
+            
+                    
+            
+                        const min = 0;
+                        const max = 100;
+                        const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                        // console.log(randomnumber)
+            
+            
+            
+                        if (randomnumber >= 50 && 60 >= value && value > 40) {
+            
+                            alert('走力アップ');
+                            leg += 1;
+                            alert('守備力アップ');
+                            defense += 1;
+                            $('#leg').text("走力" + leg);
+                            $('#defense').text("守備力" + defense);
+            
+                            let pus = document.getElementById('HP');
+                            pus.value -= 20;
+                            alert('体力が20下がった。');
+                            value -= 20;
+                            console.log(value);
+                            //  $('#value').text('体力-20'); value -= 20;
+                            // let value = document.getElementById('test').innerHTML
+                            //     value = value - 20;
+                        } else if (randomnumber < 50 && 60 >= value && value > 40) {
+                            alert('怪我をした')
+                            // let pus = document.getElementById('value');
+                            document.getElementById('HP').value -= 20;
+                            alert('体力が20下がった。');
+                            value -= 20;
+                            console.log(value);
+                            
+                        }
+                        
+                        
+                        else{
+                            ;
+                        }
+                    })
+                    
+                    $('#choki').on('click', function () {
+            
+                            const min = 0;
+                            const max = 100;
+                            const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                            // console.log(randomnumber)
+            
+            
+            
+                            if (randomnumber >= 30 && 80 >= value && value > 60) {
+            
+                                alert('走力アップ');
+                                leg += 1;
+                                alert('守備力アップ');
+                                defense += 1;
+                                $('#leg').text("走力" + leg);
+                                $('#defense').text("守備力" + defense);
+            
+                                let pus = document.getElementById('HP');
+                                pus.value -= 20;
+                                alert('体力が20下がった。');
+                                value -= 20;
+                                console.log(value);
+                                //  $('#value').text('体力-20'); value -= 20;
+                                // let value = document.getElementById('test').innerHTML
+                                //     value = value - 20;
+                            } else if (randomnumber < 30 && 80 >= value && value > 60) {
+                                alert('怪我をした')
+                                // let pus = document.getElementById('value');
+                                document.getElementById('HP').value -= 20;
+                                alert('体力が20下がった。');
+                                value -= 20;
+                                console.log(value);
+            
+                            }else{
+                    ;
+                }
+            })
+            
+        $('#choki').on('click', function () {
+            
+                
+                
+                    const min = 0;
+                    const max = 100;
+                    const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                    // console.log(randomnumber)
 
+                    
 
-        if(randomnumber > 50){
+                    if (randomnumber >= 10 && 100 >= value && value > 80) {
 
-            alert('走力アップ');leg += 2; 
-            alert('守備力アップ'); defense += 2;
-             $('#leg').text("走力" + leg);
-             $('#defense').text("守備力" + defense);
+                        alert('走力アップ');
+                        leg += 1;
+                        alert('守備力アップ');
+                        defense += 1;
+                        $('#leg').text("走力" + leg);
+                        $('#defense').text("守備力" + defense);
 
+                        let pus = document.getElementById('HP');
+                        pus.value -= 20;
+                        alert('体力が20下がった。');
+                        value -= 20;
+                        console.log(value);
+                        //  $('#value').text('体力-20'); value -= 20;
+                        // let value = document.getElementById('test').innerHTML
+                        //     value = value - 20;
+                    } else if (randomnumber < 10 && 100 >= value && value >= 80) {
+                        alert('怪我をした')
+                        // let pus = document.getElementById('value');
+                        document.getElementById('HP').value -= 20;
+                        alert('体力が20下がった。');
+                        value -= 20;
+                        console.log(value);
 
-             let pus = document.getElementById('HP');
-            pus.value -= 20;
-             alert('体力が20下がった。');
-             value -= 20;
-            console.log(value);
-            //  $('#value').text('体力-20'); value -= 20;
-        // let value = document.getElementById('test').innerHTML
-        //     value = value - 20;
-        }else{alert('怪我をした')
-            let pus = document.getElementById('HP');
-            pus.value -= 20;
-            alert('体力が20下がった。');
-            value -= 20;
-            console.log(value);
+                    }    
+        else{
+            ;
+        }
+    })
+            $('#paa').on('click', function () {
+        
+                
+        
+                    const min = 0;
+                    const max = 100;
+                    const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                    console.log(randomnumber)
+        
+        
+        
+                    if (randomnumber >= 70 && 40 >= value && value >= 0) {
+        
+                        alert('肩力アップ');
+                        kata += 1;
+                        alert('パワーアップ');
+                        defense += 1;
+                        $('#kata').text("肩力" + kata);
+                        $('#defense').text("守備力" + defense);
+        
+                        let pus = document.getElementById('HP');
+                        pus.value -= 20;
+                        alert('体力が20下がった。');
+                        value -= 20;
+                        console.log(value);
+                        //  $('#value').text('体力-20'); value -= 20;
+                        // let value = document.getElementById('test').innerHTML
+                        //     value = value - 20;
+                    } else if (randomnumber < 70 && 40 >= value && value >= 0) {
+                        alert('怪我をした')
+                        // let pus = document.getElementById('value');
+                        document.getElementById('HP').value -= 20;
+                        alert('体力が20下がった。');
+                        value -= 20;
+                        console.log(value);
+                        
+                    }
+                    
+                    
+                    else{
+                        ;
+                    }
+                })
 
-        }})
+                $('#paa').on('click', function () {
+            
+                    
+            
+                        const min = 0;
+                        const max = 100;
+                        const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                        // console.log(randomnumber)
+            
+            
+            
+                        if (randomnumber >= 50 && 60 >= value && value > 40) {
+            
+                            alert('肩アップ');
+                            kata += 1;
+                            alert('守備力アップ');
+                            defense += 1;
+                            $('#kata').text("肩" + kata);
+                            $('#defense').text("守備力" + defense);
+            
+                            let pus = document.getElementById('HP');
+                            pus.value -= 20;
+                            alert('体力が20下がった。');
+                            value -= 20;
+                            console.log(value);
+                            //  $('#value').text('体力-20'); value -= 20;
+                            // let value = document.getElementById('test').innerHTML
+                            //     value = value - 20;
+                        } else if (randomnumber < 50 && 60 >= value && value > 40) {
+                            alert('怪我をした')
+                            // let pus = document.getElementById('value');
+                            document.getElementById('HP').value -= 20;
+                            alert('体力が20下がった。');
+                            value -= 20;
+                            console.log(value);
+                            
+                        }
+                        
+                        
+                        else{
+                            ;
+                        }
+                    })
+                    
+                    $('#paa').on('click', function () {
+            
+                            const min = 0;
+                            const max = 100;
+                            const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                            // console.log(randomnumber)
+            
+            
+            
+                            if (randomnumber >= 30 && 80 >= value && value > 60) {
+            
+                                alert('肩力アップ');
+                                kata += 1;
+                                alert('守備力アップ');
+                                defense += 1;
+                                $('#kata').text("肩力" + kata);
+                                $('#defense').text("守備力" + defense);
+            
+                                let pus = document.getElementById('HP');
+                                pus.value -= 20;
+                                alert('体力が20下がった。');
+                                value -= 20;
+                                console.log(value);
+                                //  $('#value').text('体力-20'); value -= 20;
+                                // let value = document.getElementById('test').innerHTML
+                                //     value = value - 20;
+                            } else if (randomnumber < 30 && 80 >= value && value > 60) {
+                                alert('怪我をした')
+                                // let pus = document.getElementById('value');
+                                document.getElementById('HP').value -= 20;
+                                alert('体力が20下がった。');
+                                value -= 20;
+                                console.log(value);
+            
+                            }else{
+                    ;
+                }
+            })
+            
+        $('#paa').on('click', function () {
+            
+                
+                
+                    const min = 0;
+                    const max = 100;
+                    const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                    // console.log(randomnumber)
 
-        $('#paa').on('click',function(){
+                    
 
-        const min = 0;
-        const max = 100;
-        const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
-        console.log(randomnumber)
+                    if (randomnumber >= 10 && 100 >= value && value > 80) {
 
+                        alert('肩力アップ');
+                        kata += 1;
+                        alert('守備力アップ');
+                        defense += 1;
+                        $('#kata').text("肩力" + kata);
+                        $('#defense').text("守備力" + defense);
 
-        if(randomnumber > 50){
+                        let pus = document.getElementById('HP');
+                        pus.value -= 20;
+                        alert('体力が20下がった。');
+                        value -= 20;
+                        console.log(value);
+                        //  $('#value').text('体力-20'); value -= 20;
+                        // let value = document.getElementById('test').innerHTML
+                        //     value = value - 20;
+                    } else if (randomnumber < 10 && 100 >= value && value >= 80) {
+                        alert('怪我をした')
+                        // let pus = document.getElementById('value');
+                        document.getElementById('HP').value -= 20;
+                        alert('体力が20下がった。');
+                        value -= 20;
+                        console.log(value);
 
-            alert('肩力アップ');kata += 2; 
-            alert('守備力アップ'); defense += 2;
-             $('#kata').text("肩力" + kata);
-             $('#defense').text("守備力" + defense);
+                    }    
+        else{
+            ;
+        }
+    })
 
-
-             let pus = document.getElementById('HP');
-            pus.value -= 20;
-             alert('体力が20下がった。');
-             value -= 20;
-            console.log(value);
-            //  $('#value').text('体力-20'); value -= 20;
-        // let value = document.getElementById('test').innerHTML
-        //     value = value - 20;
-        }else{alert('怪我をした')
-            let pus = document.getElementById('HP');
-            pus.value -= 20;
-            alert('体力が20下がった。');
-            value -= 20;
-            console.log(value);
-        }})
+       
 
         $('#rest').on('click', function () {
 
-             let pus = document.getElementById('HP');
+            let pus = document.getElementById('HP');
             pus.value += 50;
             alert('体力が50回復した');
             value += 50;
@@ -269,7 +621,7 @@
         console.log(value);
         // クリック後にポップアップの表示
 
-    function popupImage() {
+        function popupImage() {
             var popup = document.getElementById('js-popup');
             if (!popup) return;
 
@@ -289,7 +641,7 @@
         }
         popupImage();
 
-    function popupImage2() {
+        function popupImage2() {
             var popup2 = document.getElementById('js-popup2');
             if (!popup2) return;
 
@@ -307,9 +659,10 @@
                 });
             }
         }
+    
         popupImage2();
 
-    function popupImage3() {
+        function popupImage3() {
             var popup3 = document.getElementById('js-popup3');
             if (!popup3) return;
 
@@ -329,7 +682,7 @@
         }
         popupImage3();
 
-    function popupImage4() {
+        function popupImage4() {
             var popup4 = document.getElementById('js-popup4');
             if (!popup4) return;
 
@@ -348,6 +701,7 @@
             }
         }
         popupImage4();
+    }
         // let count = 0;
         // let win = 0;
         // winrate = 0;
